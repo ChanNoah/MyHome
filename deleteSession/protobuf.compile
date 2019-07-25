@@ -1,0 +1,28 @@
+./micro.sh srv micro deleteSession
+Creating service go.micro.srv.deleteSession in /home/noah/workspace/golang/src/micro/deleteSession
+
+.
+├── main.go
+├── plugin.go
+├── handler
+│   └── example.go
+├── subscriber
+│   └── example.go
+├── proto/example
+│   └── example.proto
+├── Dockerfile
+├── Makefile
+└── README.md
+
+
+download protobuf for micro:
+
+brew install protobuf
+go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+go get -u github.com/micro/protoc-gen-micro
+
+compile the proto file example.proto:
+
+cd /home/noah/workspace/golang/src/micro/deleteSession
+protoc --proto_path=. --go_out=. --micro_out=. proto/example/example.proto
+

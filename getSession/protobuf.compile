@@ -1,0 +1,28 @@
+./micro.sh srv micro getSession
+Creating service go.micro.srv.getSession in /home/noah/workspace/golang/src/micro/getSession
+
+.
+├── main.go
+├── plugin.go
+├── handler
+│   └── example.go
+├── subscriber
+│   └── example.go
+├── proto/example
+│   └── example.proto
+├── Dockerfile
+├── Makefile
+└── README.md
+
+
+download protobuf for micro:
+
+brew install protobuf
+go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
+go get -u github.com/micro/protoc-gen-micro
+
+compile the proto file example.proto:
+
+cd /home/noah/workspace/golang/src/micro/getSession
+protoc --proto_path=. --go_out=. --micro_out=. proto/example/example.proto
+
